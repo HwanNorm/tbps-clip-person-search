@@ -1,0 +1,140 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+    margin=0.65in,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{153, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage[
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage{ragged2e}
+
+% Settings
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+
+% Title format
+\titleformat{\section}{\bfseries\normalsize\color{primaryColor}}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{0pt}{*1.3}{*0.4}
+
+% Custom bullet format
+\renewcommand\labelitemi{\small\textbullet}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=1.5pt,
+        parsep=0pt,
+        partopsep=0pt,
+        itemsep=1.5pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+% Save space - make links without arrows
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{#2}}
+
+\begin{document}
+
+% HEADER
+\begin{center}
+\textbf{\LARGE \color{primaryColor}PHAM HOANG NAM}\\[5pt]
+\small District 7, HCM City, Vietnam \ | \
+\href{mailto:hoangnampham3103@gmail.com}{hoangnampham3103@gmail.com} \ | \
++84 0856782768 \ | \
+\href{https://github.com/HwanNorm}{GitHub} \ | \
+\href{https://www.linkedin.com/in/pham-hoang-nam-aa370b309/}{LinkedIn}
+\end{center}
+
+\vspace{4pt}
+
+% PROFESSIONAL EXPERIENCE
+\section{PROFESSIONAL EXPERIENCE}
+
+\textbf{AI Research Engineer Intern --- Bach Khoa Computer Engineering (Dien Toan Group)} \hfill \textit{Mar – Jun 2026}
+\begin{highlights}
+\item Built a text-based person search system over 214,000+ images using fine-tuned CLIP (ViT-B/16), enabling natural language queries like ``man in blue jacket'' to retrieve matching person images.
+\item Designed a two-stage retrieval pipeline combining fast vector search (Qdrant) with GPU reranking to improve result precision.
+\item Surveyed state-of-the-art text-based person re-identification research, comparing model architectures and benchmarking on standard metrics (R@1, R@5, mAP).
+\item Deployed full-stack demo: FastAPI backend with query caching, React frontend, GPU inference on Colab via ngrok.
+\end{highlights}
+
+\vspace{6pt}
+
+\textbf{AI Engineer Intern --- WATA Software (Ho Chi Minh City)} \hfill \textit{Sep – Dec 2025}
+\begin{highlights}
+\item Built automated medical data ingestion pipeline using Docling + Crawl4AI to convert PDFs and clinical texts into structured formats, with Supabase storage integration for document management.
+\item Created a custom healthcare NER model to extract drugs, diseases, and dosages, improving retrieval accuracy.
+\item Integrated OpenFDA Drug API to deliver safe, validated medication information for chatbot responses.
+\item Modified LangGraph state management and LangChain schemas to incorporate new features into agent workflow.
+\item Developed agent nodes for LangGraph workflow including intent routing logic and medical-specific retrieval strategies.
+\item Collaborated on Docker deployment and LangSmith/LangFuse integration for agent tracing and monitoring.
+\end{highlights}
+
+\vspace{6pt}
+
+% PROJECTS
+\section{PROJECTS}
+
+\noindent
+\textbf{Credit Default Risk Modeling (Home Credit Dataset)} \small{[\href{https://github.com/HwanNorm/Home-Credit-Default-Risk-Prediction}{GitHub}] [\href{https://huggingface.co/spaces/CodexN/Home-Credit-Default-Risk}{Live Demo}]} \hfill \textit{Aug – Sep 2025}
+\begin{highlights}
+\item Analyzed 300,000+ loan applications across 7 datasets performing comprehensive EDA to identify risk patterns: lower education and unstable employment correlated with higher default rates. Engineered 200+ time-based features capturing payment behavior and credit utilization. Benchmarked 6 ML algorithms achieving ROC-AUC 0.77 with 12\% improvement over baseline. Built demo web app using FastAPI and Docker deployed on Hugging Face Spaces.
+\item \textbf{Technologies:} Python, Pandas, NumPy, Scikit-learn, LightGBM, XGBoost, CatBoost, Statistical Analysis, FastAPI, Docker
+\end{highlights}
+
+\vspace{4pt}
+
+\noindent
+\textbf{Bank Marketing Campaign Optimizer} \small{[\href{https://github.com/HwanNorm/Bank-Marketing-Campaign-Optimizer}{GitHub}]} \hfill \textit{Jul 2 - Jul 28 2025}
+\begin{highlights}
+\item Developed ML model to optimize bank marketing campaigns achieving 3.8x lift in customer targeting efficiency. Performed comprehensive EDA on banking dataset, built logistic regression classifier with 73\% ROC-AUC, and created vintage analysis framework. Generated actionable business recommendations for marketing optimization and resource allocation.
+\item \textbf{Technologies:} Python, Pandas, Numpy, Scikit-learn, Matplotlib, Seaborn
+\end{highlights}
+
+\vspace{4pt}
+
+\noindent
+\textbf{Stock Market Prediction System} \small{[\href{https://github.com/HwanNorm/Stock-Market-Prediction-System}{GitHub}]} \hfill \textit{Sep - Nov 2024}
+\begin{highlights}
+\item Built LSTM-based stock price prediction system analyzing 3,000+ companies across NASDAQ and Vietnamese markets. Engineered robust data pipeline to handle compressed archives and process gigabytes of financial data, developed automated trading signal system for identifying optimal buy/sell opportunities, and created investment portfolio optimization achieving 18.90\% expected returns with low risk.
+\item \textbf{Technologies:} Python, TensorFlow, Pandas, Scikit-learn, NumPy, Big Data Processing, Time Series Analysis
+\end{highlights}
+
+\vspace{8pt}
+
+% TECHNICAL SKILLS
+\section{TECHNICAL SKILLS}
+
+\noindent
+\textbf{Languages:} Python, Java, SQL, R\\[3pt]
+\textbf{Data Science \& Analytics:} EDA, Statistical Analysis, Hypothesis Testing, Feature Engineering, Data Visualization (Matplotlib, Seaborn, Plotly), Machine Learning, Deep Learning, Predictive Modeling, Big Data Processing, Time-series Analysis\\[3pt]
+\textbf{ML Frameworks \& Libraries:} Scikit-learn, Pandas, NumPy, XGBoost, LightGBM, CatBoost, PyTorch, TensorFlow, Keras\\[3pt]
+\textbf{AI \& LLMs:} Agentic RAG Systems, LangGraph, LangChain, Tool-Use Agents, NLP, Prompt Engineering, Vector Search, NER\\[3pt]
+\textbf{Engineering \& Deployment:} FastAPI, Flask, RESTful APIs, Docker, Git, LangSmith/LangFuse, Node.js, React (basic)
+
+\vspace{8pt}
+
+% EDUCATION
+\section{EDUCATION}
+
+\noindent
+\textbf{Fulbright University Vietnam} \hfill \textit{2022 – 2026}\\
+Bachelor of Science in Computer Science \hfill GPA: 3.14/4.0\\[3pt]
+
+\noindent
+\textbf{Languages:}\\
+• Vietnamese (Native)\\
+• English (Fluent --- IELTS 7.0)
+
+\end{document}
